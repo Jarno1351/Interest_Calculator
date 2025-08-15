@@ -7,27 +7,33 @@
     font-family: "Mozilla Headline", sans-serif;
 }
 html{
-    scroll-snap-type: y proximity;
+    scroll-snap-type: y mandatory;
 }
 body{
     background-color: var(--primary_white);
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
 }
-
 :root{
     --primary_white: #FBF3D5;
     --secondary_color: #D6DAC8;
     --dark_color: #9CAFAA;
     --accent_color: #c9401a;
 }
+#logo{
+    border-radius: 50%;
+}
+
 #Head{
-margin-top: 16px;
+margin-top: 2em;
+padding-top: 1em;
 margin-bottom: 16px;
 text-align: center;
 font-style: italic;
 scroll-snap-align: start;
+scroll-snap-stop: always;
 }
 
 .wrapper{
@@ -100,18 +106,23 @@ font-size: 1.4rem;
     width: min(90%,800px);
     height: 100px;
     border-radius: 15px;
-    flex-direction: column;
     justify-content: center;
+    gap: 8px;
     align-items: center;
     background-color: var(--accent_color);
     color: var(--secondary_color);
     box-shadow: 2px 5px 5px 4px hsl(0, 0%, 0%, 0.3)
 }
-.wrapperForResult > h1 > span{
+.wrapperForResult > span{
     color: var(--primary_white);
+    font-size: 2em;
+    font-weight: 700;
 }
 
 .textWrapper{
+    scroll-snap-align: start;
+    scroll-margin-top: 80px;
+    scroll-snap-stop: always;
     margin-top: 5em;
     width: 95%;
     background-color: var(--secondary_color);
@@ -138,8 +149,6 @@ font-size: 1.4rem;
 .textWrapper h1{
     color: var(--accent_color);
     font-size: 3em;  
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
 }
 
 a{
@@ -160,11 +169,60 @@ h3 > span{
     font-size: 1.3em;
 }
 
-@media screen and (max-width:752px){
+.wrapperFooter{
+    background-color: var(--dark_color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2em;
+    font-size: 1em;
+}
+
+.wrapperFooter > a{
+    color: var(--accent_color);
+    transition: 150ms ease-in;
+}
+
+#textFooter{
+    transition: 150ms ease-in
+}
+#textFooter:hover{
+    border-bottom: 2px solid var(--primary_white);
+    color: hsl(from var(--accent_color) h s calc(l + 10));
+}
+footer{
+    scroll-snap-align: end;
+    margin-top: 4em;
+    width: 100vw;
+    animation-name: fadeinSlide;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: 100px;
+}
+@media screen and (max-width:776px){
     .textWrapper h1{
     text-align: center;
 }
     .textWrapper h3{
-        text-align: center;
+        text-align: justify;
+        
+    }
+    .textWrapper{
+        font-size: 0.9em;
+    }
+    .wrapperForResult{
+        align-items: center;
+        justify-content: center;
+        flex-wrap: 1;
+        overflow: hidden;
+
+    }
+}
+
+@media screen and (max-width:532px){
+    .wrapperForResult{
+        flex-direction: column;
+        font-size: 0.9em;
     }
 }
