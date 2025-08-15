@@ -164,3 +164,7 @@ h3 > span{
     .textWrapper h1{
     text-align: center;
 }
+    .textWrapper h3{
+        text-align: center;
+    }
+}
