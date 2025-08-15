@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compound Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id="Head">Interest Calculator</h1>
+    <div class="wrapper">
+        <form>
+            <label for="principal">Principal Amount</label>
+            <input class ="input" placeholder="Enter the Principal Amount" type="number" id="principal" required>
+            
+            <label for="interest">Interest Rate</label>
+            <input type="number" placeholder="Enter the Interest Rate/ Percentage" class ="input" id="interest" required>
+            
+            
+            <label for="year">Years</label>
+            <input type="number" placeholder="Enter the Years" class ="input" id="year" required>
+           
+        </form>
+
+        <button id="submit" aria-label="button">Submit</button>
+    </div>
+    <div class="wrapperForResult">
+        <h1>Total: <span id="total">₱0.00</span></h1>
+    </div>
+    
+    <div class="textWrapper">
+        <a href="#text"><h1>What is a Compount Interest?</h1></a>
+        <h3>
+        <span id="text">Compound interest</span> is when your money earns interest not just on the original amount you put in (the principal) but also on the interest it’s already earned. Think of it like a snowball rolling down a hill—it starts small, but as it keeps rolling, it picks up more and more snow, growing faster and faster. For example, if you invest ₱10,000 at 5% annual interest, you’ll earn ₱500 in the first year, giving you ₱10,500. In the second year, that 5% is calculated on ₱10,500, so you earn ₱525, and it keeps building from there. Over time, this “interest on interest” effect can turn small investments into something much bigger, making compound interest one of the most powerful tools for growing your money.
+        </h3>
+
+    </div>
+    <script src="index.js"></script>
+
+
+    <footer></footer>
+</body>
+</html>

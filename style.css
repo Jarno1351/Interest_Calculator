@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Mozilla+Headline:wght@200..700&display=swap');
+
+*,*::before,*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Mozilla Headline", sans-serif;
+}
+html{
+    scroll-snap-type: y proximity;
+}
+body{
+    background-color: var(--primary_white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+:root{
+    --primary_white: #FBF3D5;
+    --secondary_color: #D6DAC8;
+    --dark_color: #9CAFAA;
+    --accent_color: #c9401a;
+}
+#Head{
+margin-top: 16px;
+margin-bottom: 16px;
+text-align: center;
+font-style: italic;
+scroll-snap-align: start;
+}
+
+.wrapper{
+display: flex;
+width: min(90%,800px);
+border-radius: 15px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: var(--secondary_color);
+box-shadow: 2px 5px 5px 4px hsl(0, 0%, 0%, 0.3);
+}
+
+form{
+display: flex;
+flex-direction: column;
+align-items: center;
+width: 100%;
+gap: 5px;
+padding: 2rem;
+font-weight: 600;
+font-size: 1.4rem;
+}
+
+#submit{
+    padding: 1.6em;
+    margin-bottom: 3em;
+    border: none;
+    border-radius: 15px;
+    background-color: hsl(from var(--accent_color) h s l);
+    color: var(--primary_white);
+    font-size: 1em;
+    font-weight: 800;
+    transition: 70ms ease-in;
+
+}
+
+#submit:hover{
+    background-color: hsl(from var(--accent_color) h calc(s + 30) calc(l - 10));
+}
+
+.input{
+    height: 2.5em;
+    border: none;
+    border-radius: 4px;
+    width: 100%;
+    text-align: center;
+    background-color: hsl(from var(--primary_white) h s l / 0.5);
+    transition: 150ms ease-in;
+    font-size: 1em;
+    position: relative;
+}
+
+.input:focus{
+    border: 3px solid var(--accent_color);
+    outline: none;
+}
+
+
+
+#submit:active{
+    transform: translateY(-4px);
+    background-color: hsl(from var(--accent_color) h s calc(l + 5));
+    box-shadow: 2px 4px 10px hsla(0, 0%, 0%, 0.233);
+}
+
+.wrapperForResult{
+    margin-top: 2em;
+    display: flex;
+    width: min(90%,800px);
+    height: 100px;
+    border-radius: 15px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--accent_color);
+    color: var(--secondary_color);
+    box-shadow: 2px 5px 5px 4px hsl(0, 0%, 0%, 0.3)
+}
+.wrapperForResult > h1 > span{
+    color: var(--primary_white);
+}
+
+.textWrapper{
+    margin-top: 5em;
+    width: 95%;
+    background-color: var(--secondary_color);
+    padding: 2em;
+    border-radius: 20px;
+    animation-name: fadeinSlide;
+    animation-timeline: view();
+    animation-range-start: cover;
+    animation-range-end: contain;
+}
+@keyframes fadeinSlide{
+    from
+    {
+        scale: 0.8;
+        opacity: 0;
+    }
+
+    to{
+        scale: 1;
+        opacity: 1;
+    }
+}
+
+.textWrapper h1{
+    color: var(--accent_color);
+    font-size: 3em;  
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+a{
+    text-decoration: none;
+}
+
+.textWrapper h3{
+    margin-top: 16px;
+    font-weight: 400;
+    font-family: sans-serif;
+    text-align: justify;
+    font-size: 2em;
+    color: hsl(from var(--dark_color) h s calc(l - 50));
+}
+
+h3 > span{
+    color: var(--accent_color);
+    font-size: 1.3em;
+}
+
+@media screen and (max-width:752px){
+    .textWrapper h1{
+    text-align: center;
+}
